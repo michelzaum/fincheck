@@ -40,5 +40,5 @@ v!.vscode/extensions.json
 /api/.env
 
 # frontend
-
+/frontend/.env
 /frontend/node_modules
