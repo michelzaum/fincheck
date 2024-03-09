@@ -39,7 +39,7 @@ export function Accounts() {
                   !areValuesVisible && 'blur-md',
                 )}
               >
-                {formatCurrency(1000)}
+                {formatCurrency(areValuesVisible ? 167990.37 : 0)}
               </strong>
               <button
                 className="w-8 h-8 flex items-center justify-center"
@@ -98,7 +98,7 @@ export function Accounts() {
                       <AccountCard
                         color="#7950F2"
                         name="Nubank"
-                        balance={1000.23}
+                        balance={areValuesVisible ? 1000.23 : 0}
                         type="CHECKING"
                       />
                     </SwiperSlide>
@@ -106,7 +106,7 @@ export function Accounts() {
                       <AccountCard
                         color="#333333"
                         name="XP"
-                        balance={1000.23}
+                        balance={areValuesVisible ? 146.97 : 0}
                         type="INVESTMENT"
                       />
                     </SwiperSlide>
@@ -114,7 +114,7 @@ export function Accounts() {
                       <AccountCard
                         color="#0f0"
                         name="Carteira"
-                        balance={1000.23}
+                        balance={areValuesVisible ? 1245.90 : 0}
                         type="CASH"
                       />
                     </SwiperSlide>

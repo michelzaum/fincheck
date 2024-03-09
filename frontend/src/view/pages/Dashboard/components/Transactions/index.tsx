@@ -96,7 +96,7 @@ export function Transactions() {
                       !areValuesVisible && 'blur-sm'
                     )}
                   >
-                    {formatCurrency(123)}
+                    {formatCurrency(areValuesVisible ? 123 : 0)}
                   </span>
                 </div>
 
@@ -114,7 +114,7 @@ export function Transactions() {
                       !areValuesVisible && 'blur-sm'
                     )}
                   >
-                    {formatCurrency(123)}
+                    {formatCurrency(areValuesVisible ? 123 : 0)}
                   </span>
                 </div>
               </>
