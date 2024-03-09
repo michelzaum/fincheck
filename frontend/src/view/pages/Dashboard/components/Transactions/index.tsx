@@ -72,7 +72,7 @@ export function Transactions() {
                 <Spinner className="h-10 w-10" />
               </div>
             )}
-            {(hasTransactions && !isLoading) && (
+            {(!hasTransactions && !isLoading) && (
               <div className="flex flex-col items-center justify-center h-full">
                 <>
                   <img src={emptyStateImage} />

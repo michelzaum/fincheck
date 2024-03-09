@@ -8,10 +8,20 @@ interface DashboardContextValue {
 export const DashboardContext = createContext({} as DashboardContextValue);
 
 export function DashboardProvider({ children }: { children: React.ReactNode }) {
-  const [areValuesVisible, setAreValuesVisible] = useState(true);
+  const [areValuesVisible, setAreValuesVisible] = useState<boolean>(() => {
+    const areValuesVisibleFromLocalStorage = localStorage.getItem('fincheck:areValuesVisible');
+
+    if (areValuesVisibleFromLocalStorage !== null) {
+      return JSON.parse(areValuesVisibleFromLocalStorage);
+    }
+    return  true;
+  });
 
   const toggleValueVisibility = useCallback(() => {
-    setAreValuesVisible(prevState => !prevState);
+    setAreValuesVisible(prevState => {
+      localStorage.setItem('fincheck:areValuesVisible', JSON.stringify(!prevState));
+      return !prevState;
+    });
   }, []);
 
   return (

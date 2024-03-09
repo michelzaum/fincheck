@@ -5,8 +5,8 @@ export function useTransactionController() {
 
   return {
     areValuesVisible,
-    transactions: [],
+    transactions: [{}],
     isInitialLoading: false,
-    isLoading: true,
+    isLoading: false,
   };
 }
