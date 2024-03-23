@@ -5,7 +5,7 @@ import { BankAccountIcon } from "../../../../components/icons/BankAccountIcon";
 
 export function Fab() {
   return (
-    <div className="fixed right-4 bottom-4">
+    <div className="fixed right-4 bottom-4 z-50">
       <DropDownMenu.Root>
         <DropDownMenu.Trigger>
           <button className="bg-teal-900 h-12 w-12 rounded-full flex items-center justify-center text-white">
