@@ -1,3 +1,5 @@
+import { Button } from "../../../../components/Button";
+import { DatePickerInput } from "../../../../components/DatePickerInput";
 import { InputCurrency } from "../../../../components/InputCurrency";
 import { Modal } from "../../../../components/Modal";
 import { Select } from "../../../../components/Select";
@@ -52,6 +54,10 @@ export function NewTransactionModal() {
               { value: 'CASH', label: 'Dinheiro Físico' },
             ]}
           />
+          <DatePickerInput />
+          <Button>
+            Criar
+          </Button>
         </div>
       </form>
     </Modal>
