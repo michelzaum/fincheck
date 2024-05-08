@@ -12,6 +12,7 @@ import emptyStateImage from '../../../../../assets/empty-state.svg';
 import { TransactionTypeDropDown } from "./TransactionTypeDropDown";
 import { FiltersModal } from "./FiltersModal";
 import { formatDate } from "../../../../../app/utils/formatDate";
+import { EditTransactionModal } from "../../modals/EditTransactionModal";
 
 export function Transactions() {
   const {
@@ -25,6 +26,10 @@ export function Transactions() {
     handleChangeFilters,
     filters,
     handleApplyFilters,
+    handleOpenEditModal,
+    handleCloseEditModal,
+    isEditModalOpen,
+    transactionBeingEdited,
   } = useTransactionController();
 
   const hasTransactions = transactions.length > 0;
@@ -96,10 +101,19 @@ export function Transactions() {
             )}
             {(hasTransactions && !isLoading) && (
               <>
+                {transactionBeingEdited && (
+                  <EditTransactionModal
+                    open={isEditModalOpen}
+                    onClose={handleCloseEditModal}
+                    transaction={transactionBeingEdited}
+                  />
+                )}
                 {transactions.map(transaction => (
                   <div
                     key={transaction.id}
                     className="bg-white p-4 rounded-2xl flex items-center justify-between gap-4"
+                    role="button"
+                    onClick={() => handleOpenEditModal(transaction)}
                   >
                     <div className="flex-1 flex items-center gap-3">
                       <CategoryIcon
