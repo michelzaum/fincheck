@@ -93,7 +93,7 @@ export function useEditTransactionModalController(transaction: Transaction | nul
       toast.success(
         transaction?.type === 'EXPENSE'
         ? 'A despesa foi deletada com sucesso!'
-        : 'A receita foit deletada com sucesso!'
+        : 'A receita foi deletada com sucesso!'
       );
       onClose();
     } catch {
